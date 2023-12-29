@@ -2,19 +2,40 @@
     
 }
 
-.container{
+.container {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    height: 100vh;
+    min-height: 100vh;
+}
+
+.container .row1 {
+    display: flex;
+    min-height: 10vh;;
+
+}
+
+.container .row1 .greeting-message {
+    display: flex;
+    min-width: 50%;
     
 }
 
-.greeting-message {
-    text-align: center;
+.container .row1 .buttons {
+    display: flex;
+    min-width: 50%;
+    justify-content: end;
+}
+
+.row2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    max-height:60vh;
 }
 
 .user {
-    display:flex;
-    justify-content: center;
+    display: flex;
+    min-height: 10vh;
+    align-items: center
 }
