@@ -2,26 +2,36 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" href="resources/css/styles.css" />
+    <script src="resources/js/index.js"></script>
 
-    <title>Crypto Split Homepage</title>
+    <title>DutchPay - Homepage</title>
   </head>
   <body>
-    <div class="container">
-      <div class="row1">
-        <div class="greeting-message"><h1>Welcome User X</h1></div>
-        <div class="buttons"><h1>Log in</h1></div>
+    <div class="wrapper">
+      <div class="header">
+        <div><h1 id="greetings">login or signup first!</h1> </div>
+        <div><a href="login.html" class="login">log in</a></div>
       </div>
-      <div class="row2">
-        <div class="user">User 1</div>
-        <div class="user">User 2</div>
-        <div class="user">User 3</div>
-        <div class="user">User 4</div>
-        <div class="user">User 5</div>
-        <div class="user">User 6</div>
-        <div class="user">User 7</div>
-        <div class="user">User 8</div>
+      <div class="box-wrapper">
+        <div class="box">
+          <div class="box-title">
+            <div class="box-title-active"><button onclick="activeList()" class="active-button">Active</button></div>
+            <div class="box-title-friends"><button onclick="friendList()" class="friend-button">Friends</button></div>
+          </div>
+          <div class="box-content">
+            <div id="item1" class="friend">-</div>
+            <div id="item2" class="friend">-</div>
+            <div id="item3" class="friend">-</div>
+            <div id="item4" class="friend">-</div>
+            <div id="item5" class="friend">-</div>
+            <div id="item6" class="friend">-</div>
+            <div id="item7" class="friend">-</div>
+            <div id="item8" class="friend">-</div>
+
+          </div>
+        </div>
       </div>
+      <div class="bottom-bar">bottom bar</div>
     </div>
-    
   </body>
 </html>
