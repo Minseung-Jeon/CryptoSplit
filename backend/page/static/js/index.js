@@ -1,8 +1,8 @@
 
 
-window.onload = function() {
+/* window.onload = function() {
     document.getElementById("greetings").innerHTML = "Hello! User X";
-}
+} */
 
 function activeList() {
     document.getElementById("item1").innerHTML = "UserX Owes you $Y amount ";
