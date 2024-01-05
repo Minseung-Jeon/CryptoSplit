@@ -1,19 +1,16 @@
 from django.db import models
+import decimal
 
 # Create your models here.
 class User(models.Model):
-    username = models.CharField(max_length=100, default = "default")
-    email = models.CharField(max_length=100, default = "default")
-    password = models.CharField(max_length=100, default = "default")
+    event_name = models.CharField(max_length=100)
+    your_name = models.CharField(max_length=100)
+    your_email = models.EmailField(max_length=100)
+    friend_name = models.CharField(max_length=100)
+    friend_email = models.EmailField(max_length=100)
+    amount = models.DecimalField(max_digits=100, decimal_places=2)
 
     def __str__(self):
-        return self.name
-    
-class Money(models.Model):
-    amount = models.IntegerField(default=0)
-    complete = models.BooleanField(default=False)
+        return self.event_name
 
-
-    def __str__(self):
-        return self.amount
     

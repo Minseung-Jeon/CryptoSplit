@@ -1,37 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="static/css/styles.css" />
-    <script src="static/js/index.js"></script>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
 
     <title>DutchPay - Homepage</title>
   </head>
   <body>
     <div class="wrapper">
-      <div class="header">
-        <div><h1 id="greetings">DutchPay</h1> </div>
-        <div><a href="{% url 'split' %}" class="login">Split Now!</a></div>
+      <div class="first-row">
+        <div class="greetings">Dutch Pay</div>
+        <div></div>
       </div>
-      <div class="box-wrapper">
-        <div class="box">
-          <div class="box-title">
-            <div class="box-title-active"><button onclick="activeList()" class="active-button">Active</button></div>
-            <div class="box-title-friends"><button onclick="friendList()" class="friend-button">Friends</button></div>
-          </div>
-          <div class="box-content">
-            <div id="item1" class="friend">-</div>
-            <div id="item2" class="friend">-</div>
-            <div id="item3" class="friend">-</div>
-            <div id="item4" class="friend">-</div>
-            <div id="item5" class="friend">-</div>
-            <div id="item6" class="friend">-</div>
-            <div id="item7" class="friend">-</div>
-            <div id="item8" class="friend">-</div>
+      <div class="second-row">
+        <form
+          action=""
+          method="POST"
+          class="left"
+          enctype="multiipart/form-data"
+        >
+          {% csrf_token %}
 
+          <div class="instruction">
+            We will notify you and your friend through email!
           </div>
+          <div class="row">
+            <div class="title"><label for="event">Event Name:</label></div>
+            <div class="input">
+              {{form.event_name}} 
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="title"><label for="your-name">Your Name:</label></div>
+            <div class="input">
+              {{form.your_name}}
+              
+            </div>
+          </div>
+          <div class="row">
+            <div class="title">
+              <label for="your-email">Your email:</label>
+            </div>
+            <div class="input">
+              {{form.your_email}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="title">
+              <label for="friend-name">Friend Name:</label>
+            </div>
+            <div class="input">
+              {{form.friend_name}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="title">
+              <label for="friend-email">Friend email:</label>
+            </div>
+            <div class="input">
+              {{form.friend_email}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="title"><label for="amount">Amount (up to 2 decimal):</label></div>
+            <div class="input">
+              {{form.amount}}
+            </div>
+          </div>
+          <div class="submit-button">
+            <input type="submit" value="Send email!" />
+          </div>
+        </form>
+
+        <div class="right">
+          <img src="{% static 'picture2.jpg' %}" alt="picture" />
         </div>
       </div>
-      <div class="bottom-bar">bottom bar</div>
+      <div></div>
     </div>
   </body>
 </html>
