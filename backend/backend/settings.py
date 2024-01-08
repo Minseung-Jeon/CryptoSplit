@@ -29,7 +29,7 @@ DEBUG = os.getenv("DEBUG", "FALSE") == "True"
 
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1, localhost").split(",")
 
-DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "FALSE") == "True"
+DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "TRUE") == "True"
 
 # Application definition
 INSTALLED_APPS = [
