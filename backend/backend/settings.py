@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 from django.core.management.utils import get_random_secret_key
 import os
+import sys
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -29,7 +30,6 @@ DEBUG = os.getenv("DEBUG", "FALSE") == "True"
 
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1, localhost").split(",")
 
-DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "TRUE") == "True"
 
 # Application definition
 INSTALLED_APPS = [
@@ -73,8 +73,12 @@ TEMPLATES = [
 WSGI_APPLICATION = 'backend.wsgi.application'
 
 
+
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
+
+
+DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "TRUE") == "True"
 
 DATABASES = {
     'default': {
